@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import java.util.Set;
 
 @Entity
 @Table(name = "USERS")
@@ -27,5 +28,10 @@ public class User {
 
     @Column(name = "ACTIVE",nullable = false)
     private boolean isActive;
+
+    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "USERS_ROLE",joinColumns = @JoinColumn(name = "USER_ID"))
+    @Enumerated(EnumType.STRING)
+    private Set<Role> roles;
 
 }
