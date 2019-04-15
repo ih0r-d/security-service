@@ -12,16 +12,20 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "USER_ID")
     private Long id;
+
     @Column(name = "USER_NAME", nullable = false, unique = true)
     private String username;
+
     @Column(name = "EMAIL",nullable = false)
     @Email
     private String email;
+
     @Column(name = "PASSWORD",nullable = false)
     private String password;
+
     @Column(name = "ACTIVE",nullable = false)
     private boolean isActive;
-
 
 }
