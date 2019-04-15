@@ -11,7 +11,8 @@
     <groupId>io.codepyxis</groupId>
     <artifactId>registration-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>registration-service</name>
+    <name>security-service</name>
+    <description>This project is a basic web service for registration and authorization users. Additionally, users have some roles which depend on the access level</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -84,6 +85,7 @@
     </dependencies>
 
     <build>
+        <finalName>security-service</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
